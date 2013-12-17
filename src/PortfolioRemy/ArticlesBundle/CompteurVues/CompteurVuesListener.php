@@ -28,7 +28,7 @@ class CompteurVuesListener
      */
     protected function incrementeCompteurVues()
     {
-        //TODO implémenter la méthode incrementeCompteurVues
+        
     }
     
     
@@ -49,10 +49,10 @@ class CompteurVuesListener
         //On créé une réponse
         $response = new Response();
         
-        //TODO von active la surveillance si l'objet Article est retourné
+        //on active la surveillance si l'objet Article est retourné
         
         
-        //TODO si Article, incrémenter le nbVues, le persiter dans la base
+        //si Article, incrémenter le nbVues, le persiter dans la base
         // et construire la réponse pour l'affichage de l'article
         
         
