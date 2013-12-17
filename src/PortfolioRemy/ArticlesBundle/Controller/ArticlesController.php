@@ -323,14 +323,5 @@ class ArticlesController extends Controller
                     'liste_articles' => $liste
                 ));
     }
-    
-    // définition de la méthode voirSlugAction
-    // on donne à cette méthode les arguments $slug, $annee et $format eécupérés
-    // par les paramètres {annee}, {slug} et {format} de la route
-    public function voirSlugAction($slug, $annee, $format)
-    {
-        return new Response("Affichage de l'article correspondant au slug '".$slug."', créé en ".$annee." et au format ".$format.".");
-    }
 }
-
 ?>

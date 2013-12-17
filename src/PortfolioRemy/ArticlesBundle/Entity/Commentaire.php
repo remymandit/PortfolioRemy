@@ -164,7 +164,7 @@ class Commentaire
     
     /**
      * incrémente de 1 $nbCommentaires
-     * @ORM\prePersist
+     * @ORM\PrePersist
      */
     public function increase()
     {
@@ -174,7 +174,7 @@ class Commentaire
     
     /**
      * décrémente de 1 $nbCommentaires
-     * @ORM\preRemove
+     * @ORM\PreRemove
      */
     public function decrease()
     {
