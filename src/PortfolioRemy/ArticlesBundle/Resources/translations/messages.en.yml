@@ -1,0 +1,72 @@
+portfolioremy:
+    articles:
+        title: Articles
+        home: Home
+        none: No articles !
+        more: read more
+        categories: Categories
+        seen : Seen
+        times : times
+        submit : Submit
+        last: The latest articles
+        edit : Edit an article
+        editwarning: >
+            You can edit an existing article, do not change it
+            too to avoid members do not understand what is
+            happening.
+        back: Back to article
+        delete: Delete an article
+        deletewarning: Are you sure you want to delete article
+        show: Show an article
+        backlist: Back to list
+        editit: Edit article
+        deleteit: Delete article
+        top: The top 3 articles
+        form:
+            summary: Summary
+            title: Title
+            date: Date
+            contents: Contents
+            category: Categories
+            tags: Tags
+        
+          
+          
+          
+    app:
+        welcome: Welcome
+        home: Home
+        disconnection: Logout
+        profile: My profile
+        connection: Login
+        registration: Register
+        career: Career
+        education: Education
+        skills: Skills
+        interests: Interests
+        profileviadeo: Viadeo profile
+        profilelinkedin: Linkedin profile
+        profilegit: Git profile
+        title: My portfolio
+        description:
+            - >
+                I developed this website to showcase my career, my education,
+                my degrees, my skills and my interests.
+            - >
+                This website is also a concrete example of what I can achieve.
+                You will find details of the technologies used for this project
+                in the 'Career / Mon Portfolio' menu.
+        addarticle: Add an article
+        administration: Administration
+        followtwitter: Follow
+        
+    contact:
+        title: Contact
+        form: Contact form
+        submit: Send
+        name: Your name
+        firstname: Your first name
+        mail: Your adress mail
+        subject: Subject
+        message : Message
+        fieldRequired: This field is required

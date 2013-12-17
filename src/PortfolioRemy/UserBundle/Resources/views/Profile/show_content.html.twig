@@ -1,0 +1,18 @@
+
+<h3>{{ 'profile.show.profile'|trans }}</h3>
+<div class="well">
+    <p>{{ 'profile.show.username'|trans }}: {{ user.username }}</p>
+    <p>{{ 'profile.show.email'|trans }}: {{ user.email }}</p>
+</div>
+<a href="{{ path('portfolioremyarticles_accueil') }}" class="btn btn-success">
+        <i class="el-icon-chevron-left"></i>
+        {{ 'profile.show.home'|trans }}
+    </a>
+<a href="{{ path('fos_user_profile_edit') }}" class="btn btn-warning">
+        <i class="el-icon-edit"></i>
+        {{ 'profile.show.edit'|trans }}
+    </a>
+<a href="{{ path('fos_user_change_password') }}" class="btn btn-danger">
+        <i class="el-icon-edit"></i>
+        {{ 'profile.show.change_password'|trans }}
+    </a>

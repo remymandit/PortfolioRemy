@@ -1,0 +1,17 @@
+{# import du layout général #}
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+{{ 'portfolioremy.articles.title'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block body %}
+{# sous-titre commun à toutes les pages du bundle #}
+{# <h2 class="articles-titre">{{ 'portfolioremy.articles.title'|trans }}</h2> #}
+
+
+{# définition d'un nouveau bloc pour les vues du bundle #}
+{% block portfolioremyarticles_body %}
+{% endblock %}
+
+{% endblock %}

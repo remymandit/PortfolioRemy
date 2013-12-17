@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="portfolio, développeur, php5, symfony2, java, nodejs">
+        <meta name="author" content="Mandit Rémy">
+        <meta name="description" content="Portfolio of Rémy Mandit">
+        <title>{% block title %}Portfolio Rémy{% endblock %}</title>
+
+        <!-- Assetic va regrouper les fichiers css en un seul fichier
+        le filtre cssrewrite permet de réécrire tous les chemins relatifs contenu
+        dans les fichiers css 
+        le filtre yui_css va minifier le fichier css -->
+{% stylesheets filter='cssrewrite, ?uglifycss'
+'css/style.css'
+'css/bootstrap/css/bootstrap.css' 
+'css/bootstrap/css/bootstrap-responsive.css'
+'css/elusive-iconfont-master/css/elusive-webfont.css' %}
+        <link rel="stylesheet" href="{{ asset_url }}" type="text/css" />        
+    {% endstylesheets %}
+
+        <!-- script pour prise en charge des nouvelles balises avec ie6-8 -->
+        <!--[if lt IE 9]>
+            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    </head>
+    <body>
+        <header class="navbar navbar-inverse navbar-fixed-top" role="banner">
+            <div class="navbar-inner">
+                <div class="container">
+                    <a class="btn btn-navbar" data-toggle="collapse" 
+                       data-target=".nav-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </a>
+                    <a class="brand" href="{{ path('portfolioremyarticles_accueil') }}"><span class="el-icon-home"></span> Portfolio Rémy</a>
+                    <div class="nav-collapse collapse" role="navigation">
+                        <ul class="nav" role="navigation">
+                            <li class="dropdown">
+                                <a id="drop1" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">{{ 'portfolioremy.app.career'|trans }} <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="drop1">
+                                    {{ render(controller('PortfolioRemyArticlesBundle:Articles:menuDeroulant', {'categorie': 'Expérience'})) }}
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a id="drop2" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">{{ 'portfolioremy.app.education'|trans }} <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="drop2">
+                                    {{ render(controller('PortfolioRemyArticlesBundle:Articles:menuDeroulant', {'categorie': 'Formation'})) }}
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a id="drop3" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">{{ 'portfolioremy.app.skills'|trans }} <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
+                                    {{ render(controller('PortfolioRemyArticlesBundle:Articles:menuDeroulant', {'categorie': 'Compétence'})) }}
+                                </ul>
+                            </li>
+                            <li class="dropdown">
+                                <a id="drop4" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">{{ 'portfolioremy.app.interests'|trans }} <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="drop4">
+                                    {{ render(controller('PortfolioRemyArticlesBundle:Articles:menuDeroulant', {'categorie': 'Passion'})) }}
+                                </ul>
+                            </li>
+                            <li role="presentation"><a role="menuitem" href="{{ path('portfolioremy_contact') }}"><span class="el-icon-envelope"></span> Contact</a></li>
+                        </ul>
+                        <ul class="nav pull-right" role="navigation">
+                            <li class="dropdown">
+                                
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED")%}
+                            <a id="dropProfil" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><span class="el-icon-user"></span> {{ app.user.username }} <b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropProfil">
+                            <li>
+                                <a href="{{ path('fos_user_security_logout') }}"><span class="el-icon-lock"></span> {{ 'portfolioremy.app.disconnection'|trans }}</a>
+                            </li>
+                            <li>
+                                <a href="{{ path('fos_user_profile_show') }}"><span class="el-icon-user"></span> {{ 'portfolioremy.app.profile'|trans }}</a>
+                            </li>
+                            </ul>
+
+                {% else %}
+                            <a id="dropConnect" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown"><span class="el-icon-unlock"></span> <b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="dropConnect">
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="{{ path('fos_user_security_login') }}"><span class="el-icon-unlock"></span> {{'portfolioremy.app.connection'|trans }}</a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="{{ path('fos_user_registration_register') }}"><span class="el-icon-plus"></span> {{'portfolioremy.app.registration'|trans }}</a>
+                            </li>
+                            </ul>
+                {% endif %}
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <div id="header" class="">
+            <div class="container">
+                <div class="row-fluid">
+                    <div class="span6">
+                    <h1><img src="favicon.ico" alt="favicon" class="favicon img-responsive"/> {{ 'portfolioremy.app.title'|trans }}</h1>
+                    {% for i in 0..1 %}
+                    <div class="row-fluid">
+                    <p class="description">{{ ('portfolioremy.app.description.' ~ i)|trans }}</p>
+                    </div>
+                    {% endfor %}
+                    <a class="btn btn-primary" href="http://bit.ly/19rgsOZ">
+                        <span class="el-icon-viadeo"></span>
+                             {{ 'portfolioremy.app.profileviadeo'|trans }}</a>
+                    <a class="btn btn-primary" href="http://linkd.in/19xCnUY">
+                        <span class="el-icon-linkedin"></span>
+                             {{ 'portfolioremy.app.profilelinkedin'|trans }}</a>
+                    <a href="https://twitter.com/MANDITRmy" class="btn btn-primary" >
+                        <span class="el-icon-twitter"></span>
+                             {{ 'portfolioremy.app.followtwitter'|trans }}</a>
+                    <a href="https://github.com/remymandit" class="btn btn-primary" >
+                        <span class="el-icon-github"></span>
+                             {{ 'portfolioremy.app.profilegit'|trans }}</a>
+                    </div>
+                   
+                </div>
+           </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div id="menu" class="span3">
+                     
+                    {% if is_granted('ROLE_ADMIN') %}
+                    <h2 class="menuLeft">{{ 'portfolioremy.app.administration'|trans }}</h2>
+                    <ul class="nav nav-pills nav-stacked">
+                        <li><a href="{{ path('portfolioremyarticles_ajouter') }}">{{ 'portfolioremy.app.addarticle'|trans }}</a></li>
+                        <li><a href="">{{ 'portfolioremy.app.administration'|trans }}</a></li>
+                    </ul>
+                    {% endif %}
+                    <div class="blocMenuLeft">
+                    <h2 class="menuLeft">{{ 'portfolioremy.articles.last'|trans }}</h2>
+                    <hr>
+                        {{ render(controller('PortfolioRemyArticlesBundle:Articles:menu', 
+                        {'nombre': 3})) }}
+                    </div>
+                    <div class="blocMenuLeft">
+                    <h2 class="menuLeft">{{ 'portfolioremy.articles.top'|trans }}</h2>
+                    <hr>
+                        {{ render(controller('PortfolioRemyArticlesBundle:Articles:menuTop',
+                         {'nombre': 3})) }}
+                    </div>
+                    <a class="twitter-timeline" href="https://twitter.com/MANDITRmy" 
+                       data-widget-id="410884210950295553" data-chrome="nofooter" 
+                       lang="fr" >Tweets de @MANDITRmy</a>
+                            </div>
+                            <div id="content" class="span9">
+                        {% block body %}
+                        {% endblock %}
+                                </div>
+                            </div>
+                        </div>
+                        <footer class="navbar navbar-inverse">
+                            <div class="navbar-inner">
+                                <div class="container">
+                                    <ul class="nav contenu-bas pull-right">
+                                        <li>Rémy MANDIT © 2013</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </footer>
+
+                        <!-- Assetic va regrouper le fichiers js en un seul fichier 
+                        le filtre uglifyjs2 va miniser le fichier js -->
+            {% javascripts filter='?uglifyjs2'
+                'js/jquery.js'
+                'css/bootstrap/js/bootstrap.js'
+                'js/counter.js'
+                'js/twitter.js' %}
+                        <script type="text/javascript" src="{{ asset_url }}">
+                        </script>                        
+            {% endjavascripts %}
+                        <script type="text/javascript" 
+                        src="{{ asset('js/ckeditor/ckeditor.js') }}"></script>
+                    </body>    
+                </html>

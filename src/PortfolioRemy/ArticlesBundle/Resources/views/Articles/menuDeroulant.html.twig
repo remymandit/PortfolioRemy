@@ -1,0 +1,4 @@
+
+{% for article in liste_articles %}
+<li role="presentation"><a role="menuitem" tabindex="-1" href="{{ path('portfolioremyarticles_voir', {'slug': article.slug}) }}">{{ article.titre }}</a></li>
+{%  endfor %}

@@ -1,0 +1,19 @@
+{# import du layout du bundle #}
+{% extends "PortfolioRemyArticlesBundle::layout.html.twig" %}
+
+{% block title %}
+{{ 'portfolioremy.articles.edit'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block portfolioremyarticles_body %}
+<h2>{{ 'portfolioremy.articles.edit'|trans }}</h2>
+{% include "PortfolioRemyArticlesBundle:Articles:formulaire.html.twig" %}
+<p>{{ 'portfolioremy.articles.editwarning'|trans }}</p>
+
+<p>
+    <a href="{{ path('portfolioremyarticles_voir', {'slug': article.slug}) }}" class="btn btn-success">
+        <i class="el-icon-chevron-left"></i>
+        {{ 'portfolioremy.articles.back'|trans }}</a>
+</p>
+
+{% endblock %}

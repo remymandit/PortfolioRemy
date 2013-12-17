@@ -1,0 +1,10 @@
+parameters:
+#    portfolio_remy_articles.example.class: PortfolioRemy\ArticlesBundle\Example
+
+services:
+    portfolioremy_articles.antispam:
+        class: PortfolioRemy\ArticlesBundle\Antispam\PortfolioRemyAntispam
+    portfolioremy_articles.ckeditor:
+        class: PortfolioRemy\ArticlesBundle\Form\Type\CkeditorType
+        tags: 
+            - { name: form.type, alias: ckeditor }

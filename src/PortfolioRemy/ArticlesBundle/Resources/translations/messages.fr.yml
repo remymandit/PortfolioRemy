@@ -1,0 +1,73 @@
+portfolioremy:
+    articles:
+        title: Articles
+        home: Accueil
+        none: Pas encore d'articles !
+        more: suite
+        categories: Catégories
+        seen: Vu
+        times: fois
+        submit : Valider
+        last : Les derniers articles
+        edit: Modifier un article
+        editwarning: >
+            Vous éditez un article déjà existant,
+            ne le changez pas trop pour éviter
+            aux membres de ne pas comprendre
+            ce qu'il se passe.
+        back : Retour à l'article
+        delete: Supprimer un article
+        deletewarning: Etes-vous certains de vouloir supprimer l'article
+        show: Afficher un article
+        backlist : Retour à la liste
+        editit: Modifier l'article
+        deleteit: Supprimer l'article
+        top: Le top 3 des articles
+        form:
+            summary: Résumé
+            title: Titre
+            date: Date
+            contents: Contenu
+            category: Catégories
+            tags: Tags
+        
+          
+          
+          
+    app:
+        welcome: Bonjour
+        home: Accueil
+        disconnection: Déconnexion
+        profile: Mon profil
+        connection: Connexion
+        registration: Inscription
+        career: Expériences
+        education: Formations
+        skills: Compétences
+        interests: Passions
+        profileviadeo: Profil viadeo
+        profilelinkedin: Profil linkedin
+        profilegit: Profil git
+        title: Mon portfolio
+        description:
+            - >
+                J'ai développé ce site web afin de présenter mon parcours professionnel,
+                ma formation, mes diplômes, mes compétences et mes passions.
+            - >
+                Ce site est également un exemple concret de ce que je peux
+                réaliser. Vous trouverez ainsi le détail des technologies
+                utilisées pour ce projet dans le menu 'Expériences / Mon Portfolio'.
+        addarticle: Ajouter un article
+        administration: Administration
+        followtwitter: Suivre
+        
+    contact:
+        title: Contact
+        form: Formulaire de contact
+        submit: Envoyer
+        name: Votre nom
+        firstname: Votre prénom
+        mail: Votre adresse mail
+        subject : Sujet
+        message : Message
+        fieldRequired: Ce champ est obligatoire

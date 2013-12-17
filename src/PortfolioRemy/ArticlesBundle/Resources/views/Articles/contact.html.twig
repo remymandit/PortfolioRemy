@@ -1,0 +1,11 @@
+{# import du layout du bundle #}
+{% extends "PortfolioRemyArticlesBundle::layout.html.twig" %}
+
+{% block title %}
+{{ 'portfolioremy.contact.title'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block portfolioremyarticles_body %}
+<h2>{{ 'portfolioremy.contact.form'|trans }}</h2>
+{% include "PortfolioRemyArticlesBundle:Articles:formulaireContact.html.twig" %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "PortfolioRemyArticlesBundle::layout.html.twig" %}
+
+{% block title %}
+{{ 'portfolioremy.articles.delete'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block portfolioremyarticles_body %}
+
+<h2>{{ 'portfolioremy.articles.delete'|trans }}</h2>
+
+<p>
+{{ 'portfolioremy.articles.deletewarning'|trans }} "{{ article.titre }}" ?
+</p>
+
+<form action="{{ path('portfolioremyarticles_supprimer', {'id': article.id}) }}" method="post">
+<a href="{{ path('portfolioremyarticles_voir', {'slug': article.slug}) }}" class="btn btn-success">
+    <i class="el-icon-chevron-left"></i>
+    {{ 'portfolioremy.articles.back'|trans }}
+</a>
+        <button type="submit" class="btn btn-danger"><i class="el-icon-warning-sign"></i> {{ 'portfolioremy.articles.delete'|trans }}</button>
+        {{ form_rest(form) }}
+        
+</form>
+{% endblock %}

@@ -1,0 +1,64 @@
+{# on utilise une variable temporaire, qu'on définit à false si elle n'est pas déjà définie #}
+{% set accueil = accueil|default(false) %}
+
+<article class="article ombre well">
+    <div class="container-fluid">
+       
+    {# on vérifie qu'une image est bien associée à l'article #}
+    {% if article.image is not null %}
+        <img src="{{ asset(article.image.webPath) }}" alt="{{ article.image.alt }}" class="img-responsive"/>
+    {% endif %} 
+    </div>
+    <h3 class="article-titre">
+    {# si on est sur la page d'accueil, on fait un lien vers l'article, sinon non #}
+    {% if accueil %}
+
+    {# attention j'ai modifié le lien avec le param slug #}
+        <a href="{{ path('portfolioremyarticles_voir', {'slug': article.slug} ) }}">{{ article.titre }}</a>
+
+    {% else %}
+        {{ article.titre }}
+    {% endif %}
+    </h3>
+
+   
+        
+    <p class="article-resume">
+    {% if accueil %}
+        {{ article.resume }}...<a href="{{ path('portfolioremyarticles_voir', {'slug': article.slug} ) }}"> {{ 'portfolioremy.articles.more'|trans }}</a>
+    {% else %}
+        {{ article.contenu | raw }}
+    {% endif %}
+    </p>
+    
+    {# on affiche les catégories éventuelles #}
+    {% if article.categories.count > 0 %}
+    <p class="article-categories">
+        <i><span class="el-icon-bookmark"></span> :
+        {% for categorie in article.categories %}
+            {{ categorie.nom }}{% if not loop.last %}, {% endif %}
+        {% endfor %}
+        </i>
+    </p>
+    {% endif %}
+    
+    {# on affiche les tags éventuels #}
+    {% if article.tags.count > 0 %}
+    <p class="article-categories">
+        <i><span class="el-icon-tags"></span> :
+        {% for tag in article.tags %}
+            {{ tag.nom }}{% if not loop.last %}, {% endif %}
+        {% endfor %}
+        </i>
+    </p>
+    {% endif %}
+    
+    <div class="row-fluid">
+        {# on affiche la date en fonction de la langue locale #}
+            <div class="span4"><time class="article-time"><i>{{ article.date|localizeddate('medium','none') }}</i></time></div>
+        {# on affiche le nombre de vues #}
+        <div class="span7 article-nbVues"><i><span class="el-icon-ok"></span> {{ 'portfolioremy.articles.seen'|trans }} {{ article.nbVues }} {{ 'portfolioremy.articles.times'|trans }}</i></div>
+        
+    </div>
+    
+</article>

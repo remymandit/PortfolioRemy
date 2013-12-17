@@ -1,0 +1,45 @@
+{# import du layout du bundle #}
+{% extends "PortfolioRemyArticlesBundle::layout.html.twig" %}
+
+{# sous titre de la page #}
+{% block title %}
+{{ 'portfolioremy.articles.home'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block portfolioremyarticles_body %}
+
+{# affichage les messages flashs éventuels #}
+{% for flashMessage in app.session.flashbag.get('info') %}
+    <div class="alert alert-info">
+    {{ flashMessage }}
+    </div>
+{% endfor %}
+
+    {% for article in articles %}
+        {# on ouvre une row-fluid si on est en début de ligne #}
+        {% if loop.index in [1, 3, 5] %}
+            <div class="row-fluid">
+        {% endif %}
+            <div class="span6">
+            {# on inclus la vue article à chaque itération #}
+            {% include "PortfolioRemyArticlesBundle:Articles:article.html.twig" with {'accueil': true} %}
+            </div>
+        {# on ferme la row-fluid si on est en fin de ligne #}
+        {% if (loop.index in [2, 4, 6, nombreArticles]) or ((page == nombrePage) 
+        and (loop.length == loop.index + nombreArticles*(nombrePage - 1))) %}
+            </div>
+        {% endif %}
+    {% else %}
+        <li>{{ 'portfolioremy.articles.none'|trans }}</li>
+    {% endfor %}
+    
+<div class="pagination">
+    <ul >
+    {% for p in range(1, nombrePage) %}
+            <li{% if p == page %} class="active" {% endif %}>
+                <a href="{{ path('portfolioremyarticles_accueil', {'page': p}) }}">{{ p }}</a>
+            </li>
+     {% endfor %}
+    </ul>
+</div>
+{% endblock %}

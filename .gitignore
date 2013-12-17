@@ -1,7 +1,11 @@
 /web/bundles/
+/web/js/*
+/web/css/*
+/web/uploads/*
 /app/bootstrap*
 /app/cache/*
 /app/logs/*
 /vendor/
 /app/config/parameters.yml
 /nbproject/
+/app/Resources/node_modules/*

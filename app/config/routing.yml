@@ -1,0 +1,42 @@
+# importation des routes définis dans les bundles
+
+# pour le bundle PortfolioRemyArticlesBundle
+portfolio_remy_articles:
+    # importation des routes du bundle
+    resource: "@PortfolioRemyArticlesBundle/Resources/config/routing.yml"
+    # définition du préfix pour les routes ici "/articles"
+    prefix: /articles
+
+index:
+   pattern: /
+   defaults: {_controller: PortfolioRemyArticlesBundle:Articles:index, page: 1}
+   
+# nom de la route
+portfolioremy_contact:
+    # url de type "/contact"
+    pattern: /contact
+    # contrôleur
+    defaults: { _controller: PortfolioRemyArticlesBundle:Articles:contact }
+
+fos_user_security:
+    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+
+fos_user_profile:
+    resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
+    prefix: /profile
+
+fos_user_registrer:
+    resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
+    prefix: /register
+
+fos_user_resetting:
+    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
+    prefix: /resetting
+
+fos_user_change_password:
+    resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
+    prefix: /profile
+
+fos_user_group:
+    resource: "@FOSUserBundle/Resources/config/routing/group.xml"
+    prefix: /group
