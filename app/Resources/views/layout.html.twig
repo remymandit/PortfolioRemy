@@ -101,7 +101,7 @@
             <div class="container">
                 <div class="row-fluid">
                     <div class="span6">
-                    <h1><img src="favicon.ico" alt="favicon" class="favicon img-responsive"/> {{ 'portfolioremy.app.title'|trans }}</h1>
+                    <h1><img src="{{ asset('./favicon.ico') }}" alt="favicon" class="favicon img-responsive"/> {{ 'portfolioremy.app.title'|trans }}</h1>
                     {% for i in 0..1 %}
                     <div class="row-fluid">
                     <p class="description">{{ ('portfolioremy.app.description.' ~ i)|trans }}</p>
