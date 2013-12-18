@@ -14,12 +14,14 @@
         {{ form_widget(form.resume) }}
         </div>
         <div id="counter" class="alert alert-info"><span>0</span> caractères (100 à 125 requis).</div>
+        {% if form.date != null %}
         <div class="controls">
         <label>{{ 'portfolioremy.articles.form.date'|trans }}<span class="required" 
                               title="{{ 'portfolioremy.contact.fieldRequired'|trans }}"> *</span></label>
         {{ form_errors(form.date) }}
         {{ form_widget(form.date) }}
         </div>
+        {% endif %}
         <div class="controls">
         <label>{{ 'portfolioremy.articles.form.contents'|trans }}<span class="required" 
                               title="{{ 'portfolioremy.contact.fieldRequired'|trans }}"> *</span></label>
