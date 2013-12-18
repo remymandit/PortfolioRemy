@@ -22,8 +22,13 @@ class ArticleType extends AbstractType {
                         'class' => 'span10'
                     )
                 ))
-                //champ de type ckeditor pour le contenu
-                ->add('contenu', 'ckeditor')
+                
+                ->add('contenu', 'textarea', array(
+                    'attr' => array(
+                        'class' => 'span12',
+                        'rows' => 20
+                    )
+                ))
                 //ajout de la class 'counter-field' sur le champ résumé
                 //ce qui permet d'activer le js comptant le nb de caractères
                 //saisis

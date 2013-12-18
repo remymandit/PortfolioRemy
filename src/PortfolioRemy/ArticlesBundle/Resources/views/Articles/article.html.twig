@@ -27,7 +27,7 @@
     {% if accueil %}
         {{ article.resume }}...<a href="{{ path('portfolioremyarticles_voir', {'slug': article.slug} ) }}"> {{ 'portfolioremy.articles.more'|trans }}</a>
     {% else %}
-        {{ article.contenu | raw }}
+        {{ article.contenu | markdown }}
     {% endif %}
     </p>
     
