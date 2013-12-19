@@ -20,7 +20,8 @@ framework:
     #langue locale par défaut utilisée si l'internaute ne demande rien
     default_locale:  "%locale%"
     trusted_proxies: ~
-    session:         ~
+    session:
+        name: portfolioremy_session
     fragments:       ~
     http_method_override: true
 
