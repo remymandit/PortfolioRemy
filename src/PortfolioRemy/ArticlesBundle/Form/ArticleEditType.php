@@ -3,7 +3,7 @@
 namespace PortfolioRemy\ArticlesBundle\Form;
 
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+
 
 class ArticleEditType extends ArticleType
 {
