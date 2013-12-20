@@ -4,6 +4,7 @@ namespace PortfolioRemy\ArticlesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Image
@@ -37,6 +38,17 @@ class Image
      */
     private $alt;
     
+    /**
+     *
+     * @var File
+     * 
+     * @Assert\File(
+     * maxSize="2M",
+     * mimeTypes={"image/jpeg","image/gif","image/png","image/tiff"},
+     * maxSizeMessage="The maximum allowed file size is 2MB.",
+     * mimeTypesMessage="Only the filetypes image are allowed."
+     * )
+     */
     private $file;
     
     private $tempFilename;
