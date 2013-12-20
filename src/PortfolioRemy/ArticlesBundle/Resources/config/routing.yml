@@ -51,19 +51,3 @@ portfolioremyarticles_supprimer:
     requirements:
       # le paramètre {id} est composé d'un ou plusieurs chiffres
         id: \d+
-
-# nom de la route
-portfolioremyarticles_voir_slug:
-    # url de type "/articles/2011/mon-weekend.html"
-    pattern: /{annee}/{slug}.{format}
-    # contrôleur défini par le nom du bundle, le nom du contrôleur et la
-    # méthode à exécuter (ici voirSlug)
-    # par défaut la valeur du paramètre {format} sera html
-    defaults: { _controller: PortfolioRemyArticlesBundle:Articles:voirSlug, format: html }
-    # définitions des contraintes pour les paramètres
-    requirements:
-        # le paramètre {annee} doit être composé uniquement de 4 chiffres
-        annee: \d{4}
-        # le paramètre {format} ne peut être que html ou xml
-        format: html|xml
-        
