@@ -83,10 +83,3 @@ fos_user:
     user_class: PortfolioRemy\UserBundle\Entity\User
     group:
         group_class: PortfolioRemy\UserBundle\Entity\Group
-
-# extension twig intl
-services:
-    twig.extension.intl:
-        class: Twig_Extensions_Extension_Intl
-        tags:
-            - { name: twig.extension }
