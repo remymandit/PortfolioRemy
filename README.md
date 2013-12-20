@@ -22,6 +22,3 @@ To turn a Symfony2 project you must make the following changes in the php.ini fi
     [intl]
     intl.error_level=E_WARNING
     extension=php_intl.dll
-
-
-It should also download accelerator APC but currently not available for 5.5.3 version of PHP.
