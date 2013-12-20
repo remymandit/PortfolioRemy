@@ -219,7 +219,7 @@ class Image
      */
     protected function getUploadRootDir()
     {
-        return __DIR__.'/../../../../web/'.$this->getUploadDir();
+        return $_SERVER['DOCUMENT_ROOT'].'/../web/'.$this->getUploadDir();
     }
     
     /**
