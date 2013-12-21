@@ -2,57 +2,26 @@
 {% set accueil = accueil|default(false) %}
 
 <article class="article ombre well">
-    <div class="container-fluid">
-       
-    {# on vérifie qu'une image est bien associée à l'article #}
-    {% if article.image is not null %}
-        <img src="{{ asset(article.image.webPath) }}" alt="{{ article.image.alt }}" class="img-responsive"/>
-    {% endif %} 
-    </div>
-    <h3 class="article-titre">
-    {# si on est sur la page d'accueil, on fait un lien vers l'article, sinon non #}
-    {% if accueil %}
+    {% block portfolioremyarticles_image %}
+        {% include "PortfolioRemyArticlesBundle:Articles:articleImage.html.twig" %}
+    {% endblock %}
 
-    {# attention j'ai modifié le lien avec le param slug #}
-        <a href="{{ path('portfolioremyarticles_voir', {'slug': article.slug} ) }}">{{ article.titre }}</a>
+    {% block portfolioremyarticles_titre %}
+        {% include "PortfolioRemyArticlesBundle:Articles:articleTitre.html.twig" %}
+    {% endblock %}
 
-    {% else %}
-        {{ article.titre }}
-    {% endif %}
-    </h3>
-
-   
+    {% block portfolioremyarticles_contenu %}
+        {% include "PortfolioRemyArticlesBundle:Articles:articleContenu.html.twig" %}
+    {% endblock %}
+    
+    {% block portfolioremyarticles_categories %}
+        {% include "PortfolioRemyArticlesBundle:Articles:articleCategories.html.twig" %}
+    {% endblock %}
+    
+    {% block portfolioremyarticles_tags %}
+        {% include "PortfolioRemyArticlesBundle:Articles:articleTags.html.twig" %}
+    {% endblock %}
         
-    <p class="article-resume">
-    {% if accueil %}
-        {{ article.resume }}...<a href="{{ path('portfolioremyarticles_voir', {'slug': article.slug} ) }}"> {{ 'portfolioremy.articles.more'|trans }}</a>
-    {% else %}
-        {{ article.contenu | markdown }}
-    {% endif %}
-    </p>
-    
-    {# on affiche les catégories éventuelles #}
-    {% if article.categories.count > 0 %}
-    <p class="article-categories">
-        <i><span class="el-icon-bookmark"></span> :
-        {% for categorie in article.categories %}
-            {{ categorie.nom }}{% if not loop.last %}, {% endif %}
-        {% endfor %}
-        </i>
-    </p>
-    {% endif %}
-    
-    {# on affiche les tags éventuels #}
-    {% if article.tags.count > 0 %}
-    <p class="article-categories">
-        <i><span class="el-icon-tags"></span> :
-        {% for tag in article.tags %}
-            {{ tag.nom }}{% if not loop.last %}, {% endif %}
-        {% endfor %}
-        </i>
-    </p>
-    {% endif %}
-    
     <div class="row-fluid">
         {# on affiche la date en fonction de la langue locale #}
             <div class="span4"><time class="article-time"><i>{{ article.date|localizeddate('medium','none') }}</i></time></div>

@@ -8,13 +8,12 @@
 
 {% block portfolioremyarticles_body %}
 
-{# affichage les messages flashs éventuels #}
-{% for flashMessage in app.session.flashbag.get('info') %}
-    <div class="alert alert-info">
-    {{ flashMessage }}
-    </div>
-{% endfor %}
+{# les messages flash #}
+{% block portfolioremyarticles_flash %}
+{% include "PortfolioRemyArticlesBundle:Articles:flash.html.twig" %}
+{% endblock %}
 
+{# les articles #}
     {% for article in articles %}
         {# on ouvre une row-fluid si on est en début de ligne #}
         {% if loop.index in [1, 3, 5] %}
@@ -32,14 +31,10 @@
     {% else %}
         <li>{{ 'portfolioremy.articles.none'|trans }}</li>
     {% endfor %}
-    
-<div class="pagination">
-    <ul >
-    {% for p in range(1, nombrePage) %}
-            <li{% if p == page %} class="active" {% endif %}>
-                <a href="{{ path('portfolioremyarticles_accueil', {'page': p}) }}">{{ p }}</a>
-            </li>
-     {% endfor %}
-    </ul>
-</div>
+
+{# pagination #}
+{% block portfolioremyarticles_pagination %}
+{% include "PortfolioRemyArticlesBundle:Articles:pagination.html.twig" %}
+{% endblock %}
+
 {% endblock %}

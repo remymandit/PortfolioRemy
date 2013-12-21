@@ -1,0 +1,19 @@
+{# les boutons liens #}
+<p>
+    <a href="{{ path('portfolioremyarticles_accueil') }}" class="btn btn-success">
+        <span class="el-icon-chevron-left"></span>
+        {{ 'portfolioremy.articles.backlist'|trans }}
+    </a>
+    {% if is_granted('ROLE_AUTEUR') %}
+    <a href="{{ path('portfolioremyarticles_modifier', {'id': article.id}) }}" class="btn btn-warning">
+        <span class="el-icon-edit"></span>
+        {{ 'portfolioremy.articles.editit'|trans }}
+    </a>
+    {% endif %}
+    {% if is_granted('ROLE_ADMIN') %}
+    <a href="{{ path('portfolioremyarticles_supprimer', {'id': article.id}) }}" class="btn btn-danger">
+        <span class="el-icon-trash"></span>
+        {{ 'portfolioremy.articles.deleteit'|trans }}
+    </a>
+    {% endif %}
+</p>

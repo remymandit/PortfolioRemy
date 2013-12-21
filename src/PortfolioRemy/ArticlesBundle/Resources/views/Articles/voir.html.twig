@@ -7,33 +7,16 @@
 
 {% block portfolioremyarticles_body %}
    
-{# affichage les messages flashs éventuels #}
-{% for flashMessage in app.session.flashbag.get('info') %}
-    <div class="alert alert-info">
-    {{ flashMessage }}
-    </div>
-{% endfor %}
+    {# les messages flash #}
+    {% block portfolioremyarticles_flash %}
+        {% include "PortfolioRemyArticlesBundle:Articles:flash.html.twig" %}
+    {% endblock %}
 
     {# on inclut la vue article #}
     {% include "PortfolioRemyArticlesBundle:Articles:article.html.twig" %}
 
-<p>
-    <a href="{{ path('portfolioremyarticles_accueil') }}" class="btn btn-success">
-        <span class="el-icon-chevron-left"></span>
-        {{ 'portfolioremy.articles.backlist'|trans }}
-    </a>
-    {% if is_granted('ROLE_AUTEUR') %}
-    <a href="{{ path('portfolioremyarticles_modifier', {'id': article.id}) }}" class="btn btn-warning">
-        <span class="el-icon-edit"></span>
-        {{ 'portfolioremy.articles.editit'|trans }}
-    </a>
-    {% endif %}
-    {% if is_granted('ROLE_ADMIN') %}
-    <a href="{{ path('portfolioremyarticles_supprimer', {'id': article.id}) }}" class="btn btn-danger">
-        <span class="el-icon-trash"></span>
-        {{ 'portfolioremy.articles.deleteit'|trans }}
-    </a>
-    {% endif %}
-</p>
+    {% block portfolioremyarticles_boutons %}
+        {% include "PortfolioRemyArticlesBundle:Articles:articleBoutons.html.twig" %}
+    {% endblock %}
 
 {% endblock %}

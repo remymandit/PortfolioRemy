@@ -1,0 +1,6 @@
+{# affichage les messages flashs éventuels #}
+{% for flashMessage in app.session.flashbag.get('info') %}
+    <div class="alert alert-info">
+    {{ flashMessage }}
+    </div>
+{% endfor %}

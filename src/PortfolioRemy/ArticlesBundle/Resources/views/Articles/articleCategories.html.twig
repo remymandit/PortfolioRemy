@@ -1,0 +1,10 @@
+{# on affiche les catégories éventuelles #}
+{% if article.categories.count > 0 %}
+    <p class="article-categories">
+        <i><span class="el-icon-bookmark"></span> :
+        {% for categorie in article.categories %}
+            {{ categorie.nom }}{% if not loop.last %}, {% endif %}
+        {% endfor %}
+        </i>
+    </p>
+{% endif %}

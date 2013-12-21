@@ -1,0 +1,10 @@
+{# on affiche les tags éventuels #}
+{% if article.tags.count > 0 %}
+    <p class="article-categories">
+        <i><span class="el-icon-tags"></span> :
+        {% for tag in article.tags %}
+            {{ tag.nom }}{% if not loop.last %}, {% endif %}
+        {% endfor %}
+        </i>
+    </p>
+{% endif %}
