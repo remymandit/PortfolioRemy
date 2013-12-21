@@ -3,6 +3,8 @@ PortfolioRemy
 
 This project is fully powered by Symfony 2.3
 
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/remymandit/PortfolioRemy/badges/quality-score.png?s=9c55b9bccc956b73c2af71e15a59b44e46760721)](https://scrutinizer-ci.com/g/remymandit/PortfolioRemy/)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/0c198ee7-5566-43d4-8168-9daa8174db34/mini.png)](https://insight.sensiolabs.com/projects/0c198ee7-5566-43d4-8168-9daa8174db34)
 
 ## My configurations :
 
@@ -22,3 +24,15 @@ To turn a Symfony2 project you must make the following changes in the php.ini fi
     [intl]
     intl.error_level=E_WARNING
     extension=php_intl.dll
+
+
+And for PHP >=5.5.0 you must enable and configurate OPcache by adding this code to php.ini
+
+    [OPcache]
+    zend_extension = "C:\xampp\php\ext\php_opcache.dll"
+    opcache.memory_consumption=128
+    opcache.interned_strings_buffer=8
+    opcache.max_accelerated_files=4000
+    opcache.revalidate_freq=60
+    opcache.fast_shutdown=1
+    opcache.enable_cli=1
