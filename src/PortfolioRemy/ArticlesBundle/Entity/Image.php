@@ -189,7 +189,7 @@ class Image
     public function preRemoveUpload()
     {
         //on sauvegarde temporairement le nom de fichier, car il dépend lde l'id
-        $this->tempFilename = $this->getUploadRootDir().'/'.$this->id.'.'.$this->url;
+        $this->tempFilename = $this->getUploadDir().'/'.$this->id.'.'.$this->url;
     }
     
     /**
