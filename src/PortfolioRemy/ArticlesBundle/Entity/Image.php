@@ -52,6 +52,8 @@ class Image
     private $file;
     
     private $tempFilename;
+    
+    private $uploadRootDir;
 
 
     /**
@@ -219,9 +221,21 @@ class Image
      */
     protected function getUploadRootDir()
     {
-        return $_SERVER['DOCUMENT_ROOT'].'/../web/'.$this->getUploadDir();
+        return $this->uploadRootDir;
     }
     
+    /**
+     * 
+     * @param type $uploadRootDir
+     * @return \PortfolioRemy\ArticlesBundle\Entity\Image
+     */
+    public function setUploadRootDir($uploadRootDir)
+    {
+        $this->uploadRootDir = $uploadRootDir;
+        return $this;
+    }
+
+
     /**
      * renvoie le chemin de l'image pour la vue
      * @return string

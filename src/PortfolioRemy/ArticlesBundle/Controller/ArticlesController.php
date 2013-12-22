@@ -70,7 +70,7 @@ class ArticlesController extends Controller
                 $message = \Swift_Message::newInstance()
                 ->setSubject($contact->getSujet())
                 ->setFrom($contact->getMail())
-                ->setTo('name@example.fr')
+                ->setTo('remy.mandit@free.fr')
                 ->setBody($contact->getMessage());
                 //envoi du message
                 $this->get('mailer')->send($message);
@@ -140,6 +140,8 @@ class ArticlesController extends Controller
     { 
         $article = new Article();
         
+        
+        
         //on récupère le constructeur de formulaire ArticleType
         $form = $this->createForm(new ArticleType, $article);
                 
@@ -157,6 +159,13 @@ class ArticlesController extends Controller
             {
                 //On initialise le champ nbVues à 0
                 $article->setNbVues(0);
+                // on vérifie qu'une image est associée
+                if($article->getImage()!= null)
+                {
+                    //On envoie le chemin relatif vers l'image
+                    $article->getImage()->setUploadRootDir($request->server->get('DOCUMENT_ROOT').'/../web/'.$article->getImage()->getUploadDir());
+                }
+                
                 //on enregistre l'objet $article dans la base
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($article);
@@ -200,6 +209,13 @@ class ArticlesController extends Controller
             
             if($form->isValid())
             {
+                // on vérifie qu'une image est associée
+                if($article->getImage()!= null)
+                {
+                    //On envoie le chemin relatif vers l'image
+                    $article->getImage()->setUploadRootDir($request->server->get('DOCUMENT_ROOT').'/../web/'.$article->getImage()->getUploadDir());
+                }
+                
                 //on enregistre l'article
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($article);
