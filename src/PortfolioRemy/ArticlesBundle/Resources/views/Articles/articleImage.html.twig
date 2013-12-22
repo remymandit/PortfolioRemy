@@ -1,6 +1,9 @@
-{# on vérifie qu'une image est bien associée à l'article #}
-{% if article.image is not null %}
-    <div class="container-fluid">
-        <img src="{{ asset(article.image.webPath) }}" alt="{{ article.image.alt }}" class="img-responsive"/>
-    </div>
-{% endif %} 
+{# si on est à l'accueil on n'affiche pas l'image #}
+{% if accueil == false %}
+    {# on vérifie qu'une image est bien associée à l'article #}
+    {% if article.image is not null %}
+        <div class="container-fluid">
+            <img src="{{ asset(article.image.webPath) }}" alt="{{ article.image.alt }}" class="img-responsive"/>
+        </div>
+    {% endif %}
+{% endif %}
