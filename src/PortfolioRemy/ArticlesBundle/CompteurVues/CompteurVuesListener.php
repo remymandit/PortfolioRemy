@@ -44,7 +44,7 @@ class CompteurVuesListener
     public function onKernelView(GetResponseForControllerResultEvent $event)
     {
         //On récupère le retour du contrôleur (ce qu'il y a dans le return)
-        $val = $event->getControllerResult();
+        
         
         //On créé une réponse
         $response = new Response();
