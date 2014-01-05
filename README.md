@@ -1,7 +1,7 @@
 PortfolioRemy
 ========================
 
-This project is fully powered by Symfony 2.3
+This project is fully powered by Symfony 2.4
 
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/remymandit/PortfolioRemy/badges/quality-score.png?s=9c55b9bccc956b73c2af71e15a59b44e46760721)](https://scrutinizer-ci.com/g/remymandit/PortfolioRemy/)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/0c198ee7-5566-43d4-8168-9daa8174db34/mini.png)](https://insight.sensiolabs.com/projects/0c198ee7-5566-43d4-8168-9daa8174db34)
