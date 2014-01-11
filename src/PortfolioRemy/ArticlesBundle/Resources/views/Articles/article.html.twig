@@ -24,7 +24,7 @@
         
     <div class="row-fluid">
         {# on affiche la date en fonction de la langue locale #}
-            <div class="span4"><time class="article-time"><i>{{ article.date|localizeddate('medium','none') }}</i></time></div>
+            <div class="span4"><time class="article-time" datetime="{{ article.date|date('Y-m-d') }}"><i>{{ article.date|localizeddate('medium','none') }}</i></time></div>
         {# on affiche le nombre de vues #}
         <div class="span7 article-nbVues"><i><span class="el-icon-ok"></span> {{ 'portfolioremy.articles.seen'|trans }} {{ article.nbVues }} {{ 'portfolioremy.articles.times'|trans }}</i></div>
         
