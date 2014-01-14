@@ -97,6 +97,17 @@ class ArticlesController extends Controller
     }
     
     /**
+     * permet d'afficher la page mentions légales
+     * 
+     * @return type
+     */
+    public function legalAction ()
+    {
+        return $this->render('PortfolioRemyArticlesBundle:Articles:legal.html.twig'
+        );
+    }
+    
+    /**
      * Méthode pour afficher un article
      * @param integer $id
      * @return type

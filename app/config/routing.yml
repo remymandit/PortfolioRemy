@@ -18,6 +18,12 @@ portfolioremy_contact:
     # contrôleur
     defaults: { _controller: PortfolioRemyArticlesBundle:Articles:contact }
 
+portfolioremy_legal:
+    # url de type "/contact"
+    pattern: /legal
+    # contrôleur
+    defaults: { _controller: PortfolioRemyArticlesBundle:Articles:legal }
+
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
 

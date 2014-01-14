@@ -1,0 +1,19 @@
+{# import du layout du bundle #}
+{% extends "PortfolioRemyArticlesBundle::layout.html.twig" %}
+
+{% block title %}
+{{ 'portfolioremy.app.legal'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block portfolioremyarticles_body %}
+<div class="article ombre well">
+<h2>{{ 'portfolioremy.app.legal'|trans }}</h2>
+<h3>Hébergeur</h3>
+<p>Ce site est hébergé par :</p>
+<p>Alwaysdata<br/>
+62, rue Tiquetonne<br/>
+75002 Paris<br/>
+Téléphone: 01 84 16 23 40</p>
+</div>
+
+{% endblock %}
