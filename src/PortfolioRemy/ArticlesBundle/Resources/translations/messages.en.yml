@@ -48,6 +48,9 @@ portfolioremy:
         profilelinkedin: Linkedin profile
         profilegit: Git profile
         title: My portfolio
+        powered: powered by
+        hosted: hosted by
+        legal : Legal info
         description:
             - >
                 I developed this website to showcase my career, my education,

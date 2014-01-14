@@ -49,6 +49,9 @@ portfolioremy:
         profilelinkedin: Profil linkedin
         profilegit: Profil git
         title: Mon portfolio
+        powered: propulsé par
+        hosted : hébergé par
+        legal: Mentions légales
         description:
             - >
                 J'ai développé ce site web afin de présenter mon parcours professionnel,
