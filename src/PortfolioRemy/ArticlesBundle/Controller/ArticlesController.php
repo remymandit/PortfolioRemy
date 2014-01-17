@@ -106,7 +106,7 @@ class ArticlesController extends Controller
     {
         $contact = new Contact();
         $contact->setSujet('Feedback');
-        
+        $contact->setMessage('Repportez un bug, une amélioration, votre avis...');
          //on récupère le constructeur de formulaire ContactType
         $form = $this->createForm(new ContactType, $contact);
         
@@ -146,7 +146,7 @@ class ArticlesController extends Controller
         //Soit on est en POST mais le formulaire n'est pas valide, donc on l'affiche de nouveau
         //on passe la méthode creatView() du formulaire à la vue afin qu'elle
         //puisse l'afficher
-        return $this->render('PortfolioRemyArticlesBundle:Articles:formulaireFeedback.html.twig', array(
+        return $this->render('PortfolioRemyArticlesBundle:Articles:contact.html.twig', array(
             'form' => $form->createView(),
         ));
     }

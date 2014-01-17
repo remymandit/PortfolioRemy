@@ -23,6 +23,10 @@ portfolioremy_legal:
     pattern: /legal
     # contrôleur
     defaults: { _controller: PortfolioRemyArticlesBundle:Articles:legal }
+    
+portfolioremy_feedback:
+    pattern: /feedback
+    defaults: { _controller: PortfolioRemyArticlesBundle:Articles:feedback }
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
