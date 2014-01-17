@@ -123,6 +123,16 @@
                 </div>
            </div>
         </div>
+		<div class="feedback">
+                <div class="feedback-link">
+                    <a href="#feedback" data-toggle="modal" data-target="#feedback-modal" class="trigger">Feedback</a>
+                </div>
+            </div>
+            <div id="feedback-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="Feedback" aria-hidden="true">
+                <div class="modal-body">
+                {{ render (controller('PortfolioRemyArticlesBundle:Articles:feedback')) }}
+                </div>
+            </div>
         <div class="container">
             <div class="row">
                 <div id="menu" class="span3">
