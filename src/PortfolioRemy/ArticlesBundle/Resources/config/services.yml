@@ -4,10 +4,7 @@ parameters:
 services:
     portfolioremy_articles.antispam:
         class: PortfolioRemy\ArticlesBundle\Antispam\PortfolioRemyAntispam
-    portfolioremy_articles.ckeditor:
-        class: PortfolioRemy\ArticlesBundle\Form\Type\CkeditorType
-        tags: 
-            - { name: form.type, alias: ckeditor }
+    
     # intl twig extension
     twig.extension.intl:
         class: Twig_Extensions_Extension_Intl
