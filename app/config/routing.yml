@@ -5,48 +5,78 @@ portfolio_remy_articles:
     # importation des routes du bundle
     resource: "@PortfolioRemyArticlesBundle/Resources/config/routing.yml"
     # définition du préfix pour les routes ici "/articles"
-    prefix: /articles
+    prefix: /{_locale}
+    defaults: {_locale: fr}
+    requirements:
+        _locale: en|fr
 
 index:
-   pattern: /
-   defaults: {_controller: PortfolioRemyArticlesBundle:Articles:index, page: 1}
+   pattern: /{_locale}
+   defaults: {_controller: PortfolioRemyArticlesBundle:Articles:index, page: 1, _locale: fr}
+   requirements:
+       _locale: en|fr
    
 # nom de la route
 portfolioremy_contact:
     # url de type "/contact"
-    pattern: /contact
+    pattern: /{_locale}/contact
     # contrôleur
-    defaults: { _controller: PortfolioRemyArticlesBundle:Articles:contact }
+    defaults: { _controller: PortfolioRemyArticlesBundle:Articles:contact, _locale: fr }
+    requirements:
+        _locale: en|fr
 
 portfolioremy_legal:
     # url de type "/contact"
-    pattern: /legal
+    pattern: /{_locale}/legal
     # contrôleur
-    defaults: { _controller: PortfolioRemyArticlesBundle:Articles:legal }
+    defaults: { _controller: PortfolioRemyArticlesBundle:Articles:legal, _locale: fr }
+    requirements:
+        _locale: en|fr
     
 portfolioremy_feedback:
-    pattern: /feedback
-    defaults: { _controller: PortfolioRemyArticlesBundle:Articles:feedback }
+    pattern: /{_locale}/feedback
+    defaults: { _controller: PortfolioRemyArticlesBundle:Articles:feedback, _locale: fr }
+    requirements:
+        _locale: en|fr
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"
+    prefix: /{_locale}
+    defaults: { _locale: fr }
+    requirements:
+        _locale: en|fr
 
 fos_user_profile:
     resource: "@FOSUserBundle/Resources/config/routing/profile.xml"
-    prefix: /profile
+    prefix: /{_locale}/profile
+    defaults: { _locale: fr }
+    requirements:
+        _locale: en|fr
 
 fos_user_registrer:
     resource: "@FOSUserBundle/Resources/config/routing/registration.xml"
-    prefix: /register
+    prefix: /{_locale}/register
+    defaults: { _locale: fr }
+    requirements:
+        _locale: en|fr
 
 fos_user_resetting:
     resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
-    prefix: /resetting
+    prefix: /{_locale}/resetting
+    defaults: {locale: fr }
+    requirements:
+        _locale: en|fr
 
 fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
-    prefix: /profile
+    prefix: /{_locale}/profile
+    defaults: { _locale: fr }
+    requirements:
+        _locale: en|fr
 
 fos_user_group:
     resource: "@FOSUserBundle/Resources/config/routing/group.xml"
-    prefix: /group
+    prefix: /{_locale}/group
+    defaults: { _locale: fr }
+    requirements:
+        _locale: en|fr

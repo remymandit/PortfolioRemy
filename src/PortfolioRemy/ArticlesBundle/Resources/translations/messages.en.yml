@@ -51,6 +51,9 @@ portfolioremy:
         powered: powered by
         hosted: hosted by
         legal : Legal info
+        language: Language
+        french: French
+        english: English
         description:
             - >
                 I developed this website to showcase my career, my education,

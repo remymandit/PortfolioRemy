@@ -61,8 +61,17 @@
                                     {{ render(controller('PortfolioRemyArticlesBundle:Articles:menuDeroulant', {'categorie': 'Passion'})) }}
                                 </ul>
                             </li>
-                            <li role="presentation"><a role="menuitem" href="#">Contact</a></li>
+                            <li role="presentation"><a role="menuitem" href="{{ path('portfolioremy_contact') }}"><span class="el-icon-envelope"></span> Contact</a></li>
                         </ul>
+						<ul class="nav pull-right" role="navigation">
+                            <li class="dropdown">
+                                <a id="drop5" href="#" role="button" class="dropdown-toggle" data-toggle="dropdown">{{ 'portfolioremy.app.language'|trans }} <b class="caret"></b></a>
+                                <ul class="dropdown-menu" role="menu" aria-labelledby="drop5">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/fr">{{ 'portfolioremy.app.french'|trans }}</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="/en">{{ 'portfolioremy.app.english'|trans }}</a></li>
+                                </ul>
+                            </li>
+                       </ul>
                     </div>
                 </div>
             </div>

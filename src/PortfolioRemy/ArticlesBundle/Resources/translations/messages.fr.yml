@@ -52,6 +52,9 @@ portfolioremy:
         powered: propulsé par
         hosted : hébergé par
         legal: Mentions légales
+        language: Langue
+        french : Français
+        english: Anglais
         description:
             - >
                 J'ai développé ce site web afin de présenter mon parcours professionnel,
