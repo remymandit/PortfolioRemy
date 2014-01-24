@@ -1,0 +1,35 @@
+{# import du layout du bundle #}
+{% extends "PortfolioRemyArticlesBundle::layout.html.twig" %}
+
+{# sous titre de la page #}
+{% block title %}
+{{ 'portfolioremy.articles.home'|trans }} - {{ parent() }}
+{% endblock %}
+
+{% block portfolioremyarticles_body %}
+
+{# les messages flash #}
+{% block portfolioremyarticles_flash %}
+{% include "PortfolioRemyArticlesBundle:Articles:flash.html.twig" %}
+{% endblock %}
+
+{# les articles #}
+    {% for article in articles %}
+        {# on ouvre une row-fluid si on est en début de ligne #}
+        {% if loop.index in [1, 3, 5] %}
+            <div class="row-fluid">
+        {% endif %}
+            <div class="span6">
+            {# on inclus la vue article à chaque itération #}
+            {% include "PortfolioRemyArticlesBundle:Articles:article.html.twig" with {'accueil': true} %}
+            </div>
+        {# on ferme la row-fluid si on est en fin de ligne #}
+        {% if (loop.index in [2, 4, 6, 8]) %}
+            </div>
+        {% endif %}
+    {% else %}
+        <li>{{ 'portfolioremy.articles.none'|trans }}</li>
+    {% endfor %}
+
+
+{% endblock %}

@@ -3,7 +3,7 @@
     <p class="article-categories">
         <i><span class="el-icon-bookmark"></span> :
         {% for categorie in article.categories %}
-            {{ categorie.nom }}{% if not loop.last %}, {% endif %}
+                <a href="{{ path('portfolioremyarticles_categorie', {'categorie': categorie.nom}) }}"><span class="label label-success">{{ categorie.nom }}</span></a>
         {% endfor %}
         </i>
     </p>

@@ -51,3 +51,12 @@ portfolioremyarticles_supprimer:
     requirements:
       # le paramètre {id} est composé d'un ou plusieurs chiffres
         id: \d+
+        
+# nom de la route
+portfolioremyarticles_categorie:
+    # url de type "/categorie/Expérience"
+    pattern: /categorie/{categorie}
+    # contrôleur défini par le nom du bundle, le nom du contrôleur et la
+    # méthode à exécuter (ici categorie)
+    defaults: { _controller: PortfolioRemyArticlesBundle:Articles:categorie}
+    

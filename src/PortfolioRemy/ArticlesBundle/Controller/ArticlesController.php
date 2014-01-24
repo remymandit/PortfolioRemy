@@ -107,6 +107,7 @@ class ArticlesController extends Controller
         $contact = new Contact();
         $contact->setSujet('Feedback');
         $contact->setMessage('Repportez un bug, une amélioration, votre avis...');
+        
          //on récupère le constructeur de formulaire ContactType
         $form = $this->createForm(new ContactType, $contact);
         
@@ -404,6 +405,24 @@ class ArticlesController extends Controller
                 array(
                     'liste_articles' => $liste
                 ));
+    }
+    
+    /**
+     * afficher la liste de articles d'une catégorie
+     * 
+     * @param type $categorie
+     * @return type
+     */
+    public function categorieAction($categorie)
+    {
+        $liste = $this->getDoctrine()
+                ->getManager()
+                ->getRepository('PortfolioRemyArticlesBundle:Article')
+                ->getAvecCategories(array($categorie));
+        
+        return $this->render('PortfolioRemyArticlesBundle:Articles:indexCategorie.html.twig', array(
+            'articles' => $liste
+        ));
     }
 }
 ?>
