@@ -3,7 +3,7 @@
     <p class="article-categories">
         <i><span class="el-icon-tags"></span> :
         {% for tag in article.tags %}
-            {{ tag.nom }}{% if not loop.last %}, {% endif %}
+            <span class="label">{{ tag.nom }}</span>
         {% endfor %}
         </i>
     </p>
