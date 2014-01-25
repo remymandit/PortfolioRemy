@@ -63,4 +63,20 @@ class ArticleRepository extends EntityRepository
                 ->orderBy('a.date', 'DESC');
         return $qb->getQuery()->getResult();
     }
+    
+    /**
+     * méthode pour récupérer tous les articles qui correspondent
+     * à un tag par ordre de date
+     * @param array $tags
+     * @return type
+     */
+    public function getAvecTags(array $tags)
+    {
+        $qb = $this->createQueryBuilder('a');
+        //jointure avec l'entité tag
+        $qb->join('a.tags','t')
+                ->where($qb->expr()->in('t.nom', $tags))
+                ->orderBy('a.date', 'DESC');
+        return $qb->getQuery()->getResult();
+    }
 }

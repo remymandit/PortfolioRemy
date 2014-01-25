@@ -3,7 +3,7 @@
     <p class="article-categories">
         <i><span class="el-icon-tags"></span> :
         {% for tag in article.tags %}
-            <span class="label">{{ tag.nom }}</span>
+                <a href="{{ path('portfolioremyarticles_tag', {'tag': tag.nom}) }}"><span class="label">{{ tag.nom }}</span></a>
         {% endfor %}
         </i>
     </p>

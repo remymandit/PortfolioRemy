@@ -59,4 +59,11 @@ portfolioremyarticles_categorie:
     # contrôleur défini par le nom du bundle, le nom du contrôleur et la
     # méthode à exécuter (ici categorie)
     defaults: { _controller: PortfolioRemyArticlesBundle:Articles:categorie}
-    
+ 
+ # nom de la route
+portfolioremyarticles_tag:
+    # url de type "/tag/Symfony2"
+    pattern: /tag/{tag}
+    # contrôleur défini par le nom du bundle, le nom du contrôleur et la
+    # méthode à exécuter (ici tag)
+    defaults: { _controller: PortfolioRemyArticlesBundle:Articles:tag}
