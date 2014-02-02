@@ -11,9 +11,6 @@ use PortfolioRemy\ArticlesBundle\Form\ArticleType;
 use PortfolioRemy\ArticlesBundle\Form\ArticleEditType;
 // pour sécuriser les actions à certains rôles
 use JMS\SecurityExtraBundle\Annotation\Secure;
-// le contrôleur utilise les objets Contact et ContactType
-use PortfolioRemy\ArticlesBundle\Entity\Contact;
-use PortfolioRemy\ArticlesBundle\Form\ContactType;
 
 class ArticlesController extends Controller
 {
