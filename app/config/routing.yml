@@ -1,5 +1,4 @@
 # importation des routes définis dans les bundles
-
 # pour le bundle PortfolioRemyArticlesBundle
 portfolio_remy_articles:
     # importation des routes du bundle
@@ -21,7 +20,7 @@ portfolioremy_contact:
     # url de type "/contact"
     pattern: /{_locale}/contact
     # contrôleur
-    defaults: { _controller: PortfolioRemyArticlesBundle:Articles:contact, _locale: fr }
+    defaults: { _controller: PortfolioRemyArticlesBundle:Contact:contact, _locale: fr }
     requirements:
         _locale: en|fr
 
@@ -35,7 +34,7 @@ portfolioremy_legal:
     
 portfolioremy_feedback:
     pattern: /{_locale}/feedback
-    defaults: { _controller: PortfolioRemyArticlesBundle:Articles:feedback, _locale: fr }
+    defaults: { _controller: PortfolioRemyArticlesBundle:Contact:feedback, _locale: fr }
     requirements:
         _locale: en|fr
 

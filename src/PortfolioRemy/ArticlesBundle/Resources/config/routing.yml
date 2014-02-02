@@ -58,7 +58,7 @@ portfolioremyarticles_categorie:
     pattern: /categorie/{categorie}
     # contrôleur défini par le nom du bundle, le nom du contrôleur et la
     # méthode à exécuter (ici categorie)
-    defaults: { _controller: PortfolioRemyArticlesBundle:Articles:categorie}
+    defaults: { _controller: PortfolioRemyArticlesBundle:Tags:categorie}
  
  # nom de la route
 portfolioremyarticles_tag:
@@ -66,4 +66,4 @@ portfolioremyarticles_tag:
     pattern: /tag/{tag}
     # contrôleur défini par le nom du bundle, le nom du contrôleur et la
     # méthode à exécuter (ici tag)
-    defaults: { _controller: PortfolioRemyArticlesBundle:Articles:tag}
+    defaults: { _controller: PortfolioRemyArticlesBundle:Tags:tag}
