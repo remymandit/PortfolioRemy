@@ -24,15 +24,3 @@ To turn a Symfony2 project you must make the following changes in the php.ini fi
     [intl]
     intl.error_level=E_WARNING
     extension=php_intl.dll
-
-
-And for PHP >=5.5.0 you must enable and configurate OPcache by adding this code to php.ini
-
-    [OPcache]
-    zend_extension = "C:\xampp\php\ext\php_opcache.dll"
-    opcache.memory_consumption=128
-    opcache.interned_strings_buffer=8
-    opcache.max_accelerated_files=4000
-    opcache.revalidate_freq=60
-    opcache.fast_shutdown=1
-    opcache.enable_cli=1
