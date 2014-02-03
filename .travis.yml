@@ -7,4 +7,5 @@ php:
 
 before_script: composer install -n
 
-script: phpunit -c app
+notifications:
+    email: remy.mandit@portfolioremy.fr
