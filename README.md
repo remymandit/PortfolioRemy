@@ -14,7 +14,7 @@ This project is fully powered by Symfony 2.4
 * Apache 2.4.4
 * MySql 5.6.11
 
-Do not forget to configure PHP on your computer.
+Do not forget to configure PHP on your server.
 
 To turn a Symfony2 project you must make the following changes in the php.ini file :
 
@@ -24,3 +24,54 @@ To turn a Symfony2 project you must make the following changes in the php.ini fi
     [intl]
     intl.error_level=E_WARNING
     extension=php_intl.dll
+
+
+Installation
+----------------------------------
+
+
+### Composer
+
+
+To install the necessary dependencies, download [Composer](https://getcomposer.org/) 
+and run the following command:
+
+    php composer.phar install
+
+
+### Configuration
+
+
+Customize your configuration file in the app/config/parameters.yml with your 
+database and your smtp settings for sending mail.
+
+To create the database run the following command:
+
+    php app/console doctrine:database:create
+
+Then to generate the tables and schema:
+
+    php app/console doctrine:schema:update --force
+
+
+### Assetic
+
+
+The application uses uglifycss and uglify-js libraries, we must 
+download [NodeJs](http://nodejs.org/).
+And run the command:
+
+    php app/console assetic:dump --env=prod --no-debug
+
+
+Dependencies
+---------------
+
+
+The application contains the following bundles:
+
+  * **friendsofsymfony/user-bundle** - User Management
+
+  * **winzou/console-bundle** - Access to the console on the server
+
+  * **jms/security-extra-bundle** - Secure access to certain pages with annotations
